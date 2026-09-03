@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RISC-V UnifiedDB Query</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .graph-heading{display:flex;align-items:center;justify-content:space-between}.zoom-controls{display:flex;gap:4px}.zoom-controls button{height:25px;min-width:28px;border:1px solid #d7dfd8;background:#fbfcf8;color:#187a70;font:11px 'DM Mono',monospace;cursor:pointer}.zoom-controls button:hover{background:#bfe9d4}.detail-graph{background:#f1f6f2;border:1px solid #d7dfd8;height:280px;overflow:auto}.detail-graph svg{display:block;min-width:480px;min-height:150px}.detail-center{fill:#17211f;stroke:#bfe9d4;stroke-width:3}.graph-label{font:500 12px 'DM Mono',monospace;fill:white}.side-label{font:9px 'DM Mono',monospace;fill:#697775;letter-spacing:1px}.detail-edge{stroke-width:1.4;opacity:.8}.detail-edge.dependency{stroke:#187a70}.detail-edge.dependent{stroke:#ee8352}.detail-node text{font:9px 'DM Mono',monospace;fill:white}.graph-note{font:10px 'DM Mono',monospace;color:#697775;margin:7px 0 0}.sql-list{display:grid;gap:8px}.sql-item{background:#17211f;padding:10px 12px;color:#bfe9d4;overflow:auto}.sql-item code{display:block;font:10px 'DM Mono',monospace;line-height:1.5;white-space:pre-wrap}.sql-item small{display:block;color:#9eb8ac;font:9px 'DM Mono',monospace;margin-top:6px}
+  </style>
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="/"><span class="brand-mark">RV</span><span>UnifiedDB Query<small>RISC-V specification browser</small></span></a><div class="source">OFFICIAL DATA <b id="source-count">...</b></div></header>
+  <main>
+    <section class="intro"><div><p class="kicker">EXTENSION CATALOG / SQL-BACKED</p><h1>Ask the<br><em>architecture.</em></h1><p class="lede">Search official RISC-V extensions and inspect the records that define them: versions, requirements, dependencies, instructions, and profiles.</p></div><div class="stats" id="stats"></div></section>
+    <section class="query-shell">
+      <div class="query-bar"><label class="search"><span>⌕</span><input id="search" placeholder="Search by extension name or description..." autocomplete="off"></label><div class="segmented" id="types"><button class="active" data-type="all">All</button><button data-type="unprivileged">Unprivileged</button><button data-type="privileged">Privileged</button></div><span class="result-count" id="result-count"></span></div>
+      <div class="browser"><section class="results"><div class="section-head"><span>EXTENSIONS</span><span id="result-meta"></span></div><div id="extension-list"></div><div class="empty" id="empty">No extensions match this query.</div></section><aside class="detail-panel" id="detail-panel"><div class="placeholder"><span class="crosshair">+</span><p>Choose an extension</p><small>Its complete UnifiedDB record<br>will appear here.</small></div></aside></div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
